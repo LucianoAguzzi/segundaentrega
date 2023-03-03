@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
+import Landing from "./components/Landing";
 import './App.css';
+import Navbar from './components/Navbar/Navbar';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Results from './components/Results/Results';
+import AppRoute from './components/AppRoute';
+import cartContext from './Context/cartContext'
 
 function App() {
+  const [search, setSearch] = useState("")
+  const [results, setResults] = useState([])
+  useEffect(()=>{
+    if(search != ""){
+    fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${search}`)
+    .then((res)=> res.json())
+    .then((data)=>setResults(data.results))
+}
+}, [search])
+console.log(results)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <cartContext.Provider value={[]}/>
+      <BrowserRouter>
+      <Landing/>
+      <Navbar setSearch={setSearch}/>
+      <AppRoute/>
+      <Results results={results}/>
+      </BrowserRouter>
     </div>
   );
 }
