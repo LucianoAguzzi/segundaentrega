@@ -5,7 +5,8 @@ import Navbar from './components/Navbar/Navbar';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Results from './components/Results/Results';
 import AppRoute from './components/AppRoute';
-import cartContext from './Context/cartContext'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+
 
 function App() {
   const [search, setSearch] = useState("")
@@ -17,15 +18,14 @@ function App() {
     .then((data)=>setResults(data.results))
 }
 }, [search])
-console.log(results)
   return (
     <div>
-      <cartContext.Provider value={[]}/>
       <BrowserRouter>
       <Landing/>
       <Navbar setSearch={setSearch}/>
       <AppRoute/>
       <Results results={results}/>
+      <ItemListContainer texto="Pablo"/>
       </BrowserRouter>
     </div>
   );
