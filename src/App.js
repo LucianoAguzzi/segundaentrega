@@ -24,8 +24,6 @@ function App() {
       <Landing/>
       <Navbar setSearch={setSearch}/>
       <AppRoute/>
-      <Results results={results}/>
-      <ItemListContainer texto="Pablo"/>
       </BrowserRouter>
     </div>
   );

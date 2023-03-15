@@ -8,9 +8,9 @@ const AppRoute = () => {
   return (
     <Routes>
       <Route exact path="/about" element={<About />} />
-      <Route path="/item/:id" element={<ItemDetailContainer />} />
-      <Route path="/" element={<ItemListContainer />} />
-      <Route path="/category/:id" element={<ItemListContainer />} />
+      <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+      <Route exact path="/" element={<ItemListContainer />} />
+      <Route exact path="/category/:categoryid" element={<ItemListContainer />} />
     </Routes>
   );
 };

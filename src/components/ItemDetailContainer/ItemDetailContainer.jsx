@@ -12,18 +12,21 @@ export const ItemDetailContainer = () => {
       // Consigo la lista de productos a traves de una promesa que resuelva la lista de poructos
 
       setTimeout(() => {
-        resolve(products);
+        resolve((products.find(product => product.id == id)));
       }, 1000);
     });
-    getData.then((res) =>
-      // Seteo el estado del componente que se llama data, devuelve el producto que tiene el id pasado por parametro
+    getData
+      .then((res) =>
+        // Seteo el estado del componente que se llama data, devuelve el producto que tiene el id pasado por parametro
 
-      setData(res.find((product) => product.id.toString() === id))
-    );
-  }, []);
+        setData(res)
+      )
+  }, [id]);
   // Si el data no es undefined retorna el ItemDetail con el producto encontrado
 
-  return data && <ItemDetail data={data} />;
+  return (
+    data && <ItemDetail data={data} />
+  );
 };
 
 export default ItemDetailContainer;
