@@ -68,4 +68,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
 # segundaentrega
+
+El siguiente proyecto es un e-commerce realizado en React, apunta a un publico general, tanto hombres como mujeres y de accesorios.
+En el home se puede ver la lista de productos completos. Y a traves de las categorias se puede filtrar la lista de productos.
+En cada enlace, se abre un loader que carga los productos filtrados. En cada producto se puede acceder al detalle y de ahi si uno quiere, puede comprar uno o varios productos. Al finalizar, se piden los datos para contacto, se confirma la compra y se envia a la base de datos la informacion de la compra.

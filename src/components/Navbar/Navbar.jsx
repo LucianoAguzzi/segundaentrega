@@ -37,24 +37,30 @@ const Navbar = (props) => {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="category/:id">
-                Categoria-A
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link-active" to="/category/:categoryId">
-                "ItemCategory"
+              <Link className="nav-link-active" to="/category/woman">
+                Women's clothing
               </Link>
             </li>
-            <CartWidget />
             <li className="nav-item">
               <Link className="nav-link-active" to="/category/men">
                 Men's clothing
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link-active" to="/category/jewelery">
+              <Link className="nav-link-active" to="/category/jewerly">
                 Jewerly
               </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link-active" to="/cart">
+                Carrito
+              </Link>
+            </li>
+            <li>
+              <CartWidget />
             </li>
           </ul>
           <div>
